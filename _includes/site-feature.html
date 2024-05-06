@@ -1,3 +1,15 @@
+<style>
+    .GFG {
+        color: white;
+        font-size: 50px;
+        text-shadow: -1px 1px 0 #000,
+            1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000;
+    }
+</style>
+
+</html>
 {% assign feature_text = page.feature_text %}
 {% assign feature_image = page.feature_image %}
 {% if page.collectionpage %}
@@ -7,9 +19,13 @@
 {% endif %}
 
 {% if feature_text or feature_image %}
-  <div class="feature"{% if feature_image %} style="background-image: url({{ feature_image }})"{% endif %}>
-    <div class="container  typeset">
-      {{ feature_text | markdownify }}
+  <div class="feature"{% if feature_image %} style="position:relative; background-image: url({{ feature_image }})"{% endif %}>
+    <div class="container  typeset" >
+      <!-- {{ feature_text | markdownify }} -->
+      <!-- <div style="text-align:right;font-size:10px;background-color:black; color:white; position: absolute; bottom: 0; right: 0;">      -->
+        
+      <!-- </div> -->
     </div>
+    <p  style="font-size: 10px; text-align:bottom; position: absolute;  left:0; right:0">{{ feature_text }}</p>
   </div>
 {% endif %}
