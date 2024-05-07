@@ -9,7 +9,6 @@ feature_image: "https://picsum.photos/2560/600?image=733"
 ## Background
 My initial reasearch tackles performance problems of NVMe drive emulation. To emulate, generally speaking, is to use software that acts as a hardware device, so that the software that regularly uses some hardware device, like a disk driver, unknowingly is talking to another software appliance rather than actual hardware device. While coming with lower performance, the flexibility due to programmability of an emulator is much greater, allowing for testing new features that could later be turned into electronic components.
 
-
 In storage systems, linux kernel uses the [blk layer](https://linux-kernel-labs.github.io/refs/heads/master/labs/block_device_drivers.html) when receiving requests from the filesystem and then pushes the request to appropriate block driver. In the case of NVMe, it's dependant on the 
 
 After receiving a IO request the emulated drive is able to perform some logic on the request and forward it further e.g. to a null-blk device or something more sophisticated like drives attached over networked fabric. This can hide all the logic required to perform networking operations from the software using 
@@ -84,23 +83,23 @@ void blk_mq_try_issue_list_directly(struct blk_mq_hw_ctx *hctx,
 
 `blk_mq_request_issue_directly` isn't called and blk_mq_commit_rqs cannot be traced.
 
+>
+    kprobe:blk_mq_try_issue_list_directly {printf("blk try\n");}
+    kprobe:nvme_queue_rq {printf("nvme que\n");
+
+    blk try
+    nvme que
+    blk try
+    nvme que
+    blk try
+    nvme que
+    blk try
+    nvme que
+    blk try
+    nvme que
+
 ```c
-
-kprobe:blk_mq_try_issue_list_directly {printf("blk try\n");}
-kprobe:nvme_queue_rq {printf("nvme que\n");
-
-blk try
-nvme que
-blk try
-nvme que
-blk try
-nvme que
-blk try
-nvme que
-blk try
-nvme que
-```
-
+kprobe:blk_mq_request_issue_directly { @issue_dir=count(); }
+``` 
+doesn't trace any function.
 `nvme_commit_rqs` is not getting called and `nvme_write_sq_db` is not traceable.
-`kprobe:blk_mq_request_issue_directly {@issue_dir=count();}` doesn't trace any function
-
