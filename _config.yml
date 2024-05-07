@@ -69,10 +69,11 @@ collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    description: "My thoughts and ideas" # The post list page content
+    # description: "Posts" # The post list page content
+    feature_image: "medieval_guild.jpg"
+
     feature_text: |
-      Welcome to the blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+       credits: https://genealogybeyondthebmd.blogspot.com/2014/05/guilds-and-apprenticeships.html
 
 # 6. Jekyll collections settings
 defaults:
@@ -98,12 +99,12 @@ defaults:
 encoding: utf-8 # Make sure the encoding is right
 lang: en-GB # Set the site language
 title: "The Machinery" # Site name or title, also used in jekyll-seo-tag
-logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
+logo: "/assets/logos/book-icon.png" # Site logo, also used in jekyll-seo-tag
 description: "Personal blog about systems engineering and research" # Site description and default description, also used in jekyll-seo-tag
-url: "https://alembic.darn.es" # Site url, also used in jekyll-seo-tag
+# url: "https://alembic.darn.es" # Site url, also used in jekyll-seo-tag
 baseurl: ""
-repo: "https://github.com/daviddarnes/alembic"
-email: "me@daviddarnes.com"
+# repo: "https://github.com/daviddarnes/alembic"
+# email: "me@daviddarnes.com"
 # disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
 # date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
 # google_analytics: ""
@@ -114,14 +115,14 @@ css_inline: true # Will insert all styles into a single <style> block in the <he
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
-  16: '/assets/logos/logo@16px.png'
-  32: '/assets/logos/logo@32px.png'
-  96: '/assets/logos/logo@96px.png'
-  120: '/assets/logos/logo@120px.png'
-  144: '/assets/logos/logo@144px.png'
-  180: '/assets/logos/logo@180px.png'
-  512: '/assets/logos/logo@512px.png'
-  1024: '/assets/logos/logo@1024px.png'
+  16: "/assets/logos/book-icon.png" 
+  32: "/assets/logos/book-icon.png"
+  96: "/assets/logos/book-icon.png" 
+  120: "/assets/logos/book-icon.png"
+  144: "/assets/logos/book-icon.png"
+  180: "/assets/logos/book-icon.png"
+  512: "/assets/logos/book-icon.png"
+  1024: "/assets/logos/book-icon.png"
 
 # 9. Site navigation
 navigation_header:
