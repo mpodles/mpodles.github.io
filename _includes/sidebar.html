@@ -1,0 +1,22 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <a>
+      <img src="{{ site.logo }}" alt="{{ site.title }} logo" class="sidebar-logo">
+      <h1 class="sidebar-title">{{ site.title }}</h1>
+    </a>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      {% for link in site.navigation_header %}
+        <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="sidebar-social">
+    <ul>
+      {% for link in site.social_links %}
+        <li><a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</aside>

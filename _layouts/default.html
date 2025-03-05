@@ -48,11 +48,17 @@
   <body class="layout-{{ page.layout }}{% if page.title %}  {{ page.title | slugify }}{% endif %}">
     {% include site-icons.svg %}
 
-    {{ content }}
+    <div class="layout-container">
+      {% include sidebar.html %}
+      
+      <div class="main-content">
+        {{ content }}
+        {% if site.service_worker != false %}{% include site-sw.html %}{% endif %}
 
-    {% if site.service_worker != false %}{% include site-sw.html %}{% endif %}
+        {% include site-before-end.html %}
+      </div>
+    </div>
 
-    {% include site-before-end.html %}
   </body>
 
 </html>
