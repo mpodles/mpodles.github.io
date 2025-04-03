@@ -1,0 +1,46 @@
+{
+  "title": {
+    "text": {
+      "headline": "The TCP story",
+      "text": "How has the main protocol that runs the Internet changed over the years?"
+    }
+  },
+  "events": [
+    {
+      "start_date": {
+        "year": "1981",
+        "month": "9"
+      },
+      "text": {
+        "headline": "<a href=\"https://www.rfc-editor.org/rfc/rfc793\">793</a>",
+        "text": "First TCP specification"
+      },
+      "group":"RFC"
+    },
+    {
+      "start_date": {
+        "year": "2020",
+        "month": "8"
+      },
+      "text": {
+        "headline": "<a href=\"https://datatracker.ietf.org/doc/html/rfc9293\">9293</a>",
+        "text": "The newest TCP specification that obsoletes previous RFCs 793, 879, 2873, 6093, 6429, 6528, and 6691. <a href=\"https://www.rfc-editor.org/rfc/rfc9293#name-tcp-terminology-overview\">Section 3.3</a> is particularly useful as a guideline for actual TCP implementations."
+      },
+      "group":"RFC"
+    },
+    {
+      "start_date": {
+        "year": "2022",
+        "month": "4"
+      },
+      "text": {
+        "headline": "<a href=\"https://www.usenix.org/conference/nsdi22/presentation/shashidhara\">FlexTOE</a>",
+        "text": "<section><h2>Description</h2><p> With the advance of SmartNIC architectures that host wimpy multi-threaded CPU cores, the authors propose an architecture that disaggregates the TCP stack into parallelizable blocks which can be independantly scaled on the small cores. The wimpy cores carry out only the operations of the data-path and the more sophisticated logic required for congestion control is done on the server's CPU</p> <h2>Experiments</h2><p>The architecture is tested against standard Linux stack</p>  </section>"
+      },
+      "media": {
+        "url": "https://www.youtube.com/watch?v=0sRLk2zNrdE"
+      },
+      "group":"Research"
+    }
+  ]
+}

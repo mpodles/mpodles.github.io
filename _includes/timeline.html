@@ -1,0 +1,17 @@
+<div id="timeline-embed" style="width: 100%; height: 600px;"></div>
+
+<link rel="stylesheet" href="{{ '/assets/timelinejs/css/timeline.css' | relative_url }}">
+<script src="{{ '/assets/timelinejs/js/timeline.js' | relative_url }}"></script>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    var timelineJsonPath = "{{ '/assets/timelinejs/data/timeline.json' | relative_url }}";
+    
+    // Create timeline
+    window.timeline = new TL.Timeline('timeline-embed', timelineJsonPath, {
+      // Optional configuration options
+      start_at_end: false,
+      default_bg_color: {r:255, g:255, b:255}
+    });
+  });
+</script>
