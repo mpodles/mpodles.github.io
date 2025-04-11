@@ -5,10 +5,36 @@
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var timelineJsonPath = "{{ '/assets/timelinejs/data/timeline.json' | relative_url }}";
+    var timelineData = {
+      "title": {
+        "text": {
+          "headline": "The TCP story",
+          "text": "How has the main protocol that runs the Internet changed over the years?"
+        }
+      },
+      "events": [
+
+        {% for event in site.timeline_events %}
+          {
+            "start_date": {{ event.start_date | jsonify }},
+            {% if event.end_date %}
+            "end_date": {{ event.end_date | jsonify }},
+            {% endif %}
+            {% if event.media %}
+            "media": {{ event.media | jsonify }},
+            {% endif %}
+            "text": {
+              "headline": {{ event.headline | jsonify }},
+              "text": {{ event.content | strip_newlines | jsonify }}
+            },
+            "group": "{{ event.group }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    };
     
     // Create timeline
-    window.timeline = new TL.Timeline('timeline-embed', timelineJsonPath, {
+    window.timeline = new TL.Timeline('timeline-embed', timelineData, {
       // Optional configuration options
       start_at_end: false,
       default_bg_color: {r:255, g:255, b:255}

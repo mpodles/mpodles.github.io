@@ -51,7 +51,9 @@ paginate_path: blog/page:num # jekyll-paginate > blog page
 #     - https://github.com/daviddarnes
 # markdown: CommonMark # Markdown parse settings, CommonMark performs slightly better an others in build time
 # commonmark:
-# markdown: kramdown
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 # highlighter: rouge
 # input: GFM
 
@@ -75,6 +77,8 @@ collections:
     #
     # feature_text: |
     #    credits: https://genealogybeyondthebmd.blogspot.com/2014/05/guilds-and-apprenticeships.html
+  timeline_events:
+    output: false
 
 # 6. Jekyll collections settings
 defaults:

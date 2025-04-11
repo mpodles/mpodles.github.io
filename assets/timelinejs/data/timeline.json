@@ -15,7 +15,42 @@
         "headline": "<a href=\"https://www.rfc-editor.org/rfc/rfc793\">793</a>",
         "text": "First TCP specification"
       },
-      "group":"RFC"
+      "group":"RFC",
+      "background": {
+      }
+    },
+    {
+      "start_date": {
+        "year": "2000",
+        "month": "1"
+      },
+      "end_date": {
+        "year": "2003",
+        "month": "1"
+      },
+      "text": {
+        "headline": "<a href=\"https://www.kernel.org/doc/html/latest/networking/segmentation-offloads.html\">TSO - TCP Segmentation Offload</a>",
+        "text": "As network cards became faster, the cost of sending data became too burdensome on the CPU and offload to segmentation was designed that pushes the responsbility of segmenting large data buffers into acceptable MSS sizes to the device, rather than having to do this in software. This is more generally named LSO for Large Send Offload"
+      },
+      "group":"Research",
+      "background": {
+      }
+      
+    },
+
+    {
+      "start_date": {
+        "year": "2015",
+        "month": "4"
+      },
+      "text": {
+        "headline": "<a href=\"https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-jeong.pdf\">mTCP</a>",
+        "text": "<section><h2>Description</h2><p>A highly influential paper on a fully redesigned TCP stack moved to userspace </p> <h2>Experiments</h2><p></p>  </section>"
+      },
+      "media": {
+        "url": "https://www.youtube.com/watch?v=qLtk-dJaotQ"
+      },
+      "group":"Research"
     },
     {
       "start_date": {
@@ -39,6 +74,35 @@
       },
       "media": {
         "url": "https://www.youtube.com/watch?v=0sRLk2zNrdE"
+      },
+      "group":"Research"
+    },
+    {
+      "start_date": {
+        "year": "2023",
+        "month": "4"
+      },
+      "text": {
+        "headline": "<a href=\"https://www.usenix.org/conference/nsdi23/presentation/kim-taehyun\">IO-TCP</a>",
+        "text": "<section><h2>Description</h2><p> Rearchitecting the TCP Stack for I/O-Offloaded Content Delivery - <a href=\"https://conferences.sigcomm.org/events/apnet2023/slides/apnet23/Sigcomm:NSDI/Park_1600_0629.pdf\">presentation</a></p> <h2>Experiments</h2><p></p>  </section>"
+      },
+      "media": {
+        "url": "https://www.youtube.com/watch?v=7hiru8xi_GA"
+      },
+      "group":"Research"
+    },
+
+    {
+      "start_date": {
+        "year": "2024",
+        "month": "7"
+      },
+      "text": {
+        "headline": "<a href=\"https://dl.acm.org/doi/10.14778/3681954.3682002\">DDS: DPU-Optimized Disaggregated Storage</a>",
+        "text": "<section> <h2> Description </h2> <p> The systems aims at providing a bump-in-the-wire Performance Enhancing Proxy that carries out file transfer on the DPU with minimal amount of requests forwarded to the host  </p>  </section>"
+      },
+      "media": {
+        "url": "/assets/timelinejs/data/dds_arch.jpg"
       },
       "group":"Research"
     }
